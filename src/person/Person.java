@@ -8,4 +8,35 @@ public class Person {
     private String lname;
     private ArrayList<BigInteger> contactnumber;
     private String email;
+
+    //getter setter
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() { return lname; }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public ArrayList<BigInteger> getContactnumber() {
+        return contactnumber;
+    }
+
+    public void setContactnumber(ArrayList<BigInteger> contactnumber) {
+        this.contactnumber = contactnumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
