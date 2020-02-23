@@ -1,5 +1,7 @@
 package linklist;
 
+import person.Person;
+
 public class ContactList {
     private Node head;
 
@@ -26,4 +28,15 @@ public class ContactList {
         }
         return response;
     }
+
+
+    //to add a contact
+    public void insert(Person data)
+    {
+        Node node = new Node(data);
+        node.setNext(head);
+        head = node;
+    }
+
+
 }
