@@ -105,4 +105,22 @@ public class ContactList {
             System.out.println("NO RESULTS FOUND!");
         }
     }
+
+    //to display names of all contatct
+    public boolean printList()
+    {
+        boolean response=false;
+        if(!isEmpty()) {
+            response=true;
+            System.out.println("Here are all your contacts: ");
+            int i = 1;
+            Node temp = head;
+            while (temp != null) {
+                System.out.println(i + ". " + temp.getData().getFname() + " " + temp.getData().getLname());
+                temp = temp.getNext();
+                i++;
+            }
+        }
+        return response;
+    }
 }
