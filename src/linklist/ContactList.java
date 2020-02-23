@@ -17,4 +17,13 @@ public class ContactList {
     {
         this.head = head;
     }
+
+    private boolean isEmpty() {
+        boolean response=false;
+        if(head == null)
+        {
+            response=true;
+        }
+        return response;
+    }
 }
