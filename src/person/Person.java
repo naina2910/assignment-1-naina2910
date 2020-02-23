@@ -39,4 +39,18 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String toString() {
+        String s;
+        if(contactnumber.size()==1)
+        {
+            s=" First Name: "+fname+"\n Last Name: "+lname+"\n Contact Number: "+contactnumber.get(0)+"\n Email Address: "+email+"\n";
+        }
+        else
+        {
+            s=" First Name: "+fname+"\n Last Name: "+lname+"\n Contact Number(s): "+contactnumber+"\n Email Address: "+email+"\n";
+        }
+        return s;
+    }
+
 }
