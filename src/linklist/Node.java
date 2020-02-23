@@ -2,7 +2,8 @@ package linklist;
 
 import person.Person;
 
-public class Node {
+public class Node
+{
     private Person data;
     private Node next;
 

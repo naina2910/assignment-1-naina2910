@@ -12,10 +12,9 @@ public class Main {
     {
         Scanner sc = new Scanner(System.in);
         ContactList contactList=new ContactList();
-        boolean c=true;
-        while (c)
+        while (true)
         {
-            System.out.println("Welcome to DBC's Contact List App\n" +
+            System.out.println("Welcome to NAINA's Contact List App\n" +
                     "Press 1 to add a new contact\n" +
                     "Press 2 to view all contacts\n" +
                     "Press 3 to search for a contact\n" +
@@ -26,31 +25,42 @@ public class Main {
             switch (choose)
             {
                 case 1:
+                    {
                     Person p = toGetDetails();
                     contactList.insert(p);
                     break;
-                case 2:
+                }
+                case 2: {
                     contactList.view();
                     break;
-                case 3:System.out.println("You could search for a contact from their first names:");
+                }
+                case 3: {
+                    System.out.println("You could search for a contact from their first names:");
                     contactList.search(sc.nextLine());
                     break;
-                case 4:
-                    if(contactList.printList()) {
+                }
+                case 4: {
+                    if (contactList.printList()) {
                         System.out.print("Press the number against the contact to delete it: ");
                         int num = sc.nextInt();
                         String name = contactList.delete(num);
                         System.out.println(name + "'s contact deleted from list!");
-                    }
-                    else{
+                    } else {
                         System.out.println("Contact List Is Empty");
                     }
                     break;
-                case 5:c=false;
+                }
+                case 5: {
+                    System.exit(0);
                     break;
+                }
+                default:
+                    System.out.println("Wrong choice");
             }
         }
     }
+
+
     //method to get details of contact from user
     private static Person toGetDetails()
     {

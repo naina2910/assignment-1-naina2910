@@ -23,7 +23,9 @@ public class ContactList {
         this.head = head;
     }
 
-    private boolean isEmpty() {
+    //to check is list empty
+    private boolean isEmpty()
+    {
         boolean response=false;
         if(head == null)
         {
@@ -47,6 +49,7 @@ public class ContactList {
         if(!isEmpty())
         {
             System.out.println("---Here are all your contacts---");
+            //arraylist of names to sort alphabetically
             ArrayList<String> nameList = new ArrayList<>();
             Node temp = head;
             while (temp != null)
@@ -54,7 +57,9 @@ public class ContactList {
                 nameList.add((temp.getData().getFname()+" "+temp.getData().getLname()));
                 temp = temp.getNext();
             }
+            //sorting
             Collections.sort(nameList);
+            //printing list after sorting
             for (String s : nameList)
             {
                 temp = head;
