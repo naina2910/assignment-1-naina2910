@@ -123,4 +123,33 @@ public class ContactList {
         }
         return response;
     }
+
+    //to delete a contact
+    public String delete(int index)
+    {
+        String name="";
+        int counter=1;
+        Node temp=head;
+        Node prev=null;
+        if( index == 1)
+        {
+            name=temp.getData().getFname()+" "+temp.getData().getLname();
+            head=head.getNext();
+        }
+        else
+        {
+            while(temp.getNext() != null)
+            {
+                prev = temp;
+                temp = temp.getNext();
+                counter++;
+                if (counter == index) {
+                    name = temp.getData().getFname() + " " + temp.getData().getLname();
+                    prev.setNext(temp.getNext());
+                    break;
+                }
+            }
+        }
+        return name;
+    }
 }
