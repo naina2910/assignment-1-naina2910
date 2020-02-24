@@ -4,6 +4,7 @@ import person.Person;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class ContactList {
     private Node head;
@@ -83,31 +84,36 @@ public class ContactList {
     }
 
     //to search a particular contact
-    public void search(String name)
+    public void search()
     {
-        ArrayList<Person> arr=new ArrayList<>();
-        Node temp=head;
-        while(temp != null)
+
+        if(!isEmpty())
         {
-            if(temp.getData().getFname().equals(name))
-            {
-                arr.add(temp.getData());
+            Scanner sc=new Scanner(System.in);
+            System.out.print("You could search for a contact from their first names:");
+            String name=sc.nextLine();
+            ArrayList<Person> arr = new ArrayList<>();
+            Node temp = head;
+            while (temp != null) {
+                if (temp.getData().getFname().equals(name)) {
+                    arr.add(temp.getData());
+                }
+                temp = temp.getNext();
             }
-            temp = temp.getNext();
-        }
-        if(arr.size() != 0)
-        {
-            System.out.println(arr.size()+" Match Found");
-            for (Person p:arr)
-            {
-                System.out.println("-------- * -------- * -------- * -------- * -------- * --------");
-                System.out.print(p);
-                System.out.println("--------*--------*--------*--------*--------*--------");
+            if (arr.size() != 0) {
+                System.out.println(arr.size() + " Match Found");
+                for (Person p : arr) {
+                    System.out.println("-------- * -------- * -------- * -------- * -------- * --------");
+                    System.out.print(p);
+                    System.out.println("--------*--------*--------*--------*--------*--------");
+                }
+            } else {
+                System.out.println("NO RESULTS FOUND!");
             }
         }
         else
         {
-            System.out.println("NO RESULTS FOUND!");
+            System.out.println("Contact list is empty");
         }
     }
 

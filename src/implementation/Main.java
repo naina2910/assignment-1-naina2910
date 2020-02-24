@@ -35,8 +35,7 @@ public class Main {
                     break;
                 }
                 case 3: {
-                    System.out.println("You could search for a contact from their first names:");
-                    contactList.search(sc.nextLine());
+                    contactList.search();
                     break;
                 }
                 case 4: {
